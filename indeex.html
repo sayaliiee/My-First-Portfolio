@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sayali | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #17253d;
+            background: #ffffff;
+            line-height: 1.5;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            background: #17253d;
+            color: white;
+            height: 60px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 9%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav ul li a:hover {
+            color: #e7a58d;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            background: #f3f7fa;
+            padding: 80px 9% 75px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .hero h2 {
+            font-size: 23px;
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            max-width: 800px;
+            font-size: 16px;
+            color: #39465a;
+            margin-bottom: 25px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            text-decoration: none;
+            background: #ffffff;
+            color: #17253d;
+            border: 1px solid #17253d;
+
+            padding: 9px 18px;
+            border-radius: 5px;
+
+            font-size: 14px;
+        }
+
+        .hero-button:hover {
+            background: #17253d;
+            color: white;
+        }
+
+
+        /* GENERAL SECTION */
+
+        section {
+            padding: 45px 9%;
+        }
+
+        .section-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        section h2 {
+            font-size: 27px;
+            font-weight: 500;
+            margin-bottom: 18px;
+        }
+
+
+        /* ABOUT */
+
+        .about-section {
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: #3f4b5c;
+            font-size: 15px;
+        }
+
+        .education {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .education-box {
+            border: 1px solid #d7dee6;
+            padding: 14px 16px;
+            border-radius: 6px;
+            background: white;
+        }
+
+        .education-box strong {
+            display: block;
+            font-size: 15px;
+            margin-bottom: 3px;
+        }
+
+        .education-box span {
+            font-size: 14px;
+            color: #596577;
+        }
+
+
+        /* SKILLS */
+
+        .skills-section {
+            padding-top: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        .skill-card {
+            border: 1px solid #d7dee6;
+            border-radius: 6px;
+            padding: 16px;
+
+            background: white;
+        }
+
+        .skill-card h3 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 7px;
+        }
+
+        .skill-card p {
+            font-size: 13px;
+            color: #596577;
+        }
+
+
+        /* THINGS I WANT TO LEARN */
+
+        .learning-section {
+            padding-top: 25px;
+        }
+
+        .learning-box {
+            border: 1px solid #d7dee6;
+            border-radius: 6px;
+            background: white;
+
+            padding: 18px 22px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .learning-column p {
+            font-size: 14px;
+            color: #3f4b5c;
+            margin-bottom: 8px;
+        }
+
+
+        /* PROJECTS */
+
+        .projects-section {
+            padding-top: 25px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .project-card {
+            border: 1px solid #d7dee6;
+            border-radius: 6px;
+            padding: 17px;
+            background: white;
+        }
+
+        .project-card h3 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            color: #596577;
+            margin-bottom: 10px;
+        }
+
+        .project-card a {
+            color: #b96f59;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        .project-card a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* CONTACT */
+
+        .contact-section {
+            background: #f3f7fa;
+            padding-top: 45px;
+            padding-bottom: 45px;
+        }
+
+        .contact-form {
+            max-width: 650px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .form-row label {
+            font-size: 14px;
+        }
+
+        .form-row input,
+        .form-row textarea {
+            width: 100%;
+            border: 1px solid #cbd4de;
+            border-radius: 4px;
+            padding: 8px;
+            font-family: inherit;
+            background: white;
+        }
+
+        .form-row textarea {
+            height: 80px;
+            resize: vertical;
+        }
+
+        .buttons {
+            margin-left: 120px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .buttons button {
+            padding: 8px 16px;
+            border-radius: 5px;
+            border: 1px solid #17253d;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .submit-btn {
+            background: #17253d;
+            color: white;
+        }
+
+        .clear-btn {
+            background: white;
+            color: #17253d;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background: #17253d;
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+        }
+
+        footer .name {
+            font-size: 20px;
+            margin-bottom: 3px;
+        }
+
+        footer .tagline {
+            font-size: 14px;
+            color: #d9dee6;
+            margin-bottom: 12px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        .social-links a {
+            color: #e7a58d;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* TABLET */
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            section,
+            .hero {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            nav {
+                height: auto;
+                padding: 15px 5%;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 13px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding-top: 55px;
+                padding-bottom: 55px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero h2 {
+                font-size: 19px;
+            }
+
+            section {
+                padding-top: 35px;
+                padding-bottom: 35px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .learning-box {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            .buttons {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <nav>
+        <div class="logo">Sayali</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#learning">Learning</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HOME -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>Hello, I'm Sayali</h1>
+
+            <h2>AI & CSE Student | Building in AI</h2>
+
+            <p>
+                Welcome to my personal portfolio. I am highly driven by
+                logical problem solving, designing intelligent solutions,
+                and transforming creative ideas into reality through code.
+            </p>
+
+            <a href="#about" class="hero-button">
+                Explore My Journey
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about-section" id="about">
+
+        <div class="section-container">
+
+            <h2>About Me</h2>
+
+            <div class="about-content">
+
+                <div class="about-text">
+
+                    <p>
+                        I am from Maharashtra and currently living and
+                        studying in Bengaluru. I am pursuing Computer
+                        Science and Engineering at Scaler School of
+                        Technology, Bengaluru.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Alongside my CSE degree, I am pursuing a parallel
+                        degree from IIT Madras — a Bachelor of Science
+                        (BS) in Data Science and Applications.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        I am at the beginning of my tech journey and enjoy
+                        learning programming, problem solving, modern
+                        technologies, and building meaningful projects
+                        through code.
+                    </p>
+
+                </div>
+
+
+                <div class="education">
+
+                    <div class="education-box">
+
+                        <strong>
+                            Scaler School of Technology
+                        </strong>
+
+                        <span>
+                            Bengaluru · Computer Science & Engineering
+                        </span>
+
+                    </div>
+
+
+                    <div class="education-box">
+
+                        <strong>
+                            IIT Madras
+                        </strong>
+
+                        <span>
+                            BS in Data Science and Applications
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section class="skills-section" id="skills">
+
+        <div class="section-container">
+
+            <h2>My Skills</h2>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <h3>HTML</h3>
+
+                    <p>
+                        Learning how to structure web pages
+                        and build meaningful web content.
+                    </p>
+                </div>
+
+
+                <div class="skill-card">
+                    <h3>CSS</h3>
+
+                    <p>
+                        Creating clean layouts, styling
+                        interfaces, and responsive designs.
+                    </p>
+                </div>
+
+
+                <div class="skill-card">
+                    <h3>Java</h3>
+
+                    <p>
+                        Building programs and learning
+                        object-oriented programming.
+                    </p>
+                </div>
+
+
+                <div class="skill-card">
+                    <h3>JavaScript</h3>
+
+                    <p>
+                        Learning to create interactive and
+                        dynamic web experiences.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LEARNING -->
+
+    <section class="learning-section" id="learning">
+
+        <div class="section-container">
+
+            <h2>Things I Want To Learn</h2>
+
+            <div class="learning-box">
+
+                <div class="learning-column">
+
+                    <p>Artificial Intelligence</p>
+                    <p>Robotics</p>
+
+                </div>
+
+
+                <div class="learning-column">
+
+                    <p>Competitive Programming</p>
+                    <p>Software Development</p>
+
+                </div>
+
+
+                <div class="learning-column">
+
+                    <p>Startup & Entrepreneurship</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section class="projects-section" id="projects">
+
+        <div class="section-container">
+
+            <h2>My Projects</h2>
+
+            <div class="projects-grid">
+
+                <div class="project-card">
+
+                    <h3>My Little Space</h3>
+
+                    <p>
+                        A personal space for journaling, mood
+                        tracking, tasks, and planning.
+                    </p>
+
+                    <a href="https://khvait-createc.github.io/MLS/"
+                       target="_blank">
+                        View Project
+                    </a>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <h3>Forge</h3>
+
+                    <p>
+                        A project focused on bringing useful
+                        digital resources and ideas together
+                        in one place.
+                    </p>
+
+                    <a href="#" onclick="return false;">
+                        Link coming soon
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact-section" id="contact">
+
+        <div class="section-container">
+
+            <h2>Contact Me</h2>
+
+            <form class="contact-form"
+                  onsubmit="sendEmail(event)">
+
+                <div class="form-row">
+
+                    <label for="name">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <label for="email">
+                        Your Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <label for="message">
+                        Your Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <div class="buttons">
+
+                    <button
+                        type="submit"
+                        class="submit-btn">
+                        Submit
+                    </button>
+
+                    <button
+                        type="reset"
+                        class="clear-btn">
+                        Clear
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="name">
+            Sayali
+        </div>
+
+        <div class="tagline">
+            Learning • Building • Exploring
+        </div>
+
+        <div class="social-links">
+
+            <a
+                href="https://github.com/sayaliiee"
+                target="_blank">
+                GitHub
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/sayali-jadhav-55905a349/"
+                target="_blank">
+                LinkedIn
+            </a>
+
+            <a
+                href="mailto:sayalijadhav422@gmail.com">
+                Email
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+
+        function sendEmail(event) {
+
+            event.preventDefault();
+
+            const name =
+                document.getElementById("name").value;
+
+            const email =
+                document.getElementById("email").value;
+
+            const message =
+                document.getElementById("message").value;
+
+
+            const subject =
+                "Portfolio Contact from " + name;
+
+
+            const body =
+                "Name: " + name +
+                "%0AEmail: " + email +
+                "%0A%0AMessage:%0A" + message;
+
+
+            window.location.href =
+                "mailto:sayalijadhav422@gmail.com" +
+                "?subject=" +
+                encodeURIComponent(subject) +
+                "&body=" +
+                body;
+        }
+
+    </script>
+
+</body>
+</html>
